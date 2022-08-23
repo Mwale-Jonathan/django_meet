@@ -7,8 +7,8 @@ def landing(request):
     return render(request, 'core/landing.html')
 
 
-def dashboard(request):
+def lobby(request):
     context = {
-        'title': 'Dashboard',
+        'title': 'Lobby',
     }
     return render(request, 'base.html', context)

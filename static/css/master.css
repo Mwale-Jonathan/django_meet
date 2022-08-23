@@ -12,18 +12,6 @@ body {
     font-weight: bold;
 }
 
-/*.navbar-dark .navbar-nav .nav-link {
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.65) !important;
-    font-weight: 600;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.65) !important;
-    font-weight: 600;
-}
-*/
 .navbar-dark a.nav-link:hover {
     color: var(--bs-white) !important;
 }
@@ -54,6 +42,12 @@ body {
 .bg-blur {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
+}
+
+
+.form-control:focus {
+    border-color: #81c784;
+    box-shadow: 0 0 0 0.25rem rgb(76 175 80 / 37%);
 }
 
 
