@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <fieldset class="form-group col-md-6 mx-auto pb-5">
+        <legend class="text-center mb-2 my-4">
+            <h3>
+                <strong>Create an Account</strong>
+            </h3>
+        </legend>
+        <form method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="mt-3 d-flex align-items-center justify-content-between">
+                <button type="submit" class="btn btn-success px-4 fw-bold w-100">
+                    Register
+                </button>
+            </div>
+            <div class="mt-4 pt-2 border-top text-center">
+                <p class="text-muted">
+                    Already Have An Account ? <a href="{% url 'login' %}">Login</a>
+                </p>
+            </div>
+        </form>
+    </fieldset>
+
+    <script>
+        let fields = document.getElementsByTagName('input');
+        for (var field in fields) {
+            fields[field].classList += ' mb-2'
+        }
+        let radios = document.querySelectorAll('.form-check');
+        console.log(radios)
+        for (var radio in radios) {
+            radios[radio].classList += '-inline'
+        }
+    </script>
+{% endblock content %}
