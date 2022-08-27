@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block room %}
+<main class="room-container py-2 bg-success text-white" style="min-height: 100vh;">
+    <div class="container">
+
+        <div class="w-100 mb-2">
+            <h2>Room: <span id="room-name">{{ meeting.channel }}</span></h2>
+        </div>
+
+        <section id="video-streams" class="pb-2"></section>
+
+        <div id="controls-wrapper" class="mt-5 w-100 d-flex align-items-center justify-content-center">
+
+            <button class="icon-wrapper btn btn-success-dark" id="mic-btn">
+                <img src="{% static 'img/mic.svg' %}" alt="icon" class="control-icon">
+            </button>
+
+            <button class="icon-wrapper btn btn-success-dark mx-2"  id="camera-btn">
+                <img src="{% static 'img/video.svg' %}" alt="icon" class="control-icon">
+            </button>
+
+            <button class="icon-wrapper btn btn-success-dark" id="leave-btn">
+                <img src="{% static 'img/leave.svg' %}" alt="icon" class="control-icon">
+            </button>
+
+        </div>
+
+    </div>
+</main>
+<script src="{% static 'js/AgoraRTC_N-4.13.0.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/stream.js' %}" type="text/javascript"></script>
+{% endblock room %}

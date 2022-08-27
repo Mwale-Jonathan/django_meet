@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="mb-5">
+    <div class="d-flex flex-column flex-md-row gap-3">
+        <div class="col-12 col-md-4 col-lg-3">
+            <a href="#" class="btn btn-success btn px-4 mb-2 w-100">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="{% static 'img/logo_white.svg' %}" width="25" class="me-2" alt="logo">
+                    New Meeting...
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-6 my-0">
+            <div class="input-group mb-3 w-100">
+                <span class="input-group-text bg-blur border-end-0" id="basic-addon1">
+                    <img src="{% static 'img/code.svg' %}" width="25" alt="code">
+                </span>
+                <input type="text" class="form-control bg-blur" placeholder="Enter code to join a meeting.." aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    {% for i in meetings %}
+    <div class="col">
+        <a href="{{ i.get_absolute_url }}" class="card text-bg-success shadow-sm card-more text-decoration-none">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.channel }}</h5>
+                <p class="card-text">
+                    Date: {{ i.date }} <br>
+                    Starts: {{ i.start_time }} <br>
+                    Ends: {{ i.start_time }} <br>
+                    Duration: {{ i.duration }} min <br>
+                </p>
+            </div>
+        </a>
+    </div>
+    {% empty %}
+    <div class="w-100 text-center">
+        <h1 class="text-muted">No Scheduled meetings.</h1>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
