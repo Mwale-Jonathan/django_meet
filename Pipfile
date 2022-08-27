@@ -8,6 +8,7 @@ django = "*"
 django-crispy-forms = "*"
 pillow = "*"
 django-dotenv = "*"
+agora-token-builder = "*"
 
 [dev-packages]
 

@@ -28,13 +28,19 @@
 
 <body>
     {% include 'includes/messages.html' %}
-    {% include 'includes/header.html' %}
 
-    <main class="container py-4">
-        {% block content %}{% endblock content %}
-    </main>
+    {% if not '/room/' in request.path %}
+        {% include 'includes/header.html' %}
 
-    {% include 'includes/footer.html' %}
+        <main class="container py-4">
+            {% block content %}{% endblock content %}
+        </main>
+
+        {% include 'includes/footer.html' %}
+    {% else %}
+        {% block room %}{% endblock room %}
+    {% endif %}
+
 </body>
 
 </html>

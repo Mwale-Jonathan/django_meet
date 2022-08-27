@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
+    'meetings.apps.MeetingsConfig',
 
     'crispy_forms',
 ]
